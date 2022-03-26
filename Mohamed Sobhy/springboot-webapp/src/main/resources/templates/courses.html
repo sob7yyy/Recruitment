@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses List</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div style="display: flex;justify-content: center;">
+<h3>Courses List</h3>
+</div>
+<div style="display: flex;justify-content: center;">
+<table style="width:80%" border="1"
+       class = "table table-striped table-responsive-md">
+    <thead>
+    <tr>
+        <th> Course ID </th>
+        <th> Course Name </th>
+        <th> Course Description </th>
+        <th> Course Steps </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${courseList.empty}">
+        <td colspan="4"> No courses Available </td>
+    </tr>
+    <tr th:each="course : ${courseList}">
+        <td><span th:text="${course.id}"> ID </span></td>
+        <td><span th:text="${course.name}"> Name </span></td>
+        <td><span th:text="${course.description}"> Age </span></td>
+        <td><span th:text="${course.steps}"> Age </span></td>
+
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>

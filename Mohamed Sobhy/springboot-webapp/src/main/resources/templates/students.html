@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students List</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div style="display: flex;justify-content: center;">
+    <h3>Students List</h3>
+</div>
+<div style="display: flex;justify-content: center;">
+<table style="width:80%" border="1"
+    class = "table table-striped table-responsive-md">
+    <thead>
+    <tr>
+        <th> Student ID </th>
+        <th> Student Name </th>
+        <th> Student Age </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${studentList.empty}">
+        <td colspan="3"> No students Available </td>
+    </tr>
+    <tr th:each="student : ${studentList}">
+        <td><span th:text="${student.id}"> ID </span></td>
+        <td><span th:text="${student.name}"> Name </span></td>
+        <td><span th:text="${student.age}"> Age </span></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>
